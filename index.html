@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAÍZ - Finanzas Personales desde Cero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Paleta "PDF RAÍZ": Verdes, Crema y Tierra */
+        .bg-raiz-primary { background-color: #1B4332; } 
+        .text-raiz-primary { color: #1B4332; }
+        .bg-raiz-accent { background-color: #2D6A4F; } 
+        .bg-raiz-light { background-color: #F8F9FA; } 
+        .bg-raiz-paper { background-color: #F4F1EA; } 
+        .border-raiz-gold { border-color: #B79455; } 
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <!-- BARRA DE URGENCIA -->
+    <div class="bg-[#1B4332] text-[#F4F1EA] text-center py-2 px-4 text-sm font-bold tracking-wide border-b border-[#B79455]/30">
+        ⏳ <span id="urgency-text">OFERTA LIMITADA $7 USD: EL PRECIO SUBIRÁ EN </span> <span id="timer" class="text-[#B79455]">00:00:00</span>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-5 h-16 flex justify-between items-center">
+            <div class="text-2xl font-black text-[#1B4332] tracking-tighter uppercase">RAÍZ</div>
+            <a href="https://paulafacu.gumroad.com/l/movqz" target="_blank" class="bg-[#1B4332] hover:bg-[#081C15] text-[#F4F1EA] px-6 py-2 rounded-lg font-bold text-sm transition-all shadow-md">
+                ACCESO POR $7
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header class="bg-[#F4F1EA] pt-16 pb-24 px-5 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-block border border-[#1B4332] text-[#1B4332] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+                Guía de Finanzas Personales
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black leading-[1.1] mb-8 text-[#1B4332]">
+                Toma el control total de tu <span class="text-[#2D6A4F]">dinero</span> sin dejar de disfrutar lo que amas.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Olvídate de la ansiedad de fin de mes. El Método RAÍZ es la base sólida para organizar tus cuentas y ahorrar, incluso si hoy sientes que no te sobra nada.
+            </p>
+            <div class="flex flex-col items-center gap-4">
+                <a href="https://paulafacu.gumroad.com/l/movqz" target="_blank" class="animate-pulse-soft bg-[#1B4332] hover:bg-[#081C15] text-white text-xl font-bold px-12 py-5 rounded-xl transition-all shadow-xl shadow-emerald-900/20 transform hover:-translate-y-1">
+                    SÍ, QUIERO EL MÉTODO POR $7
+                </a>
+                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">
+                    Descarga instantánea · Pago seguro
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. SECCIÓN DE DOLOR -->
+    <section class="py-24 bg-[#081C15] text-[#F4F1EA] px-5">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-16">¿Te sientes identificado?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#1B4332]/40 p-10 rounded-2xl border border-[#2D6A4F] hover:bg-[#1B4332]/60 transition-all">
+                    <div class="text-3xl mb-4">🍂</div>
+                    <h3 class="text-xl font-bold mb-3 text-[#B79455]">Sueldo que se esfuma</h3>
+                    <p class="text-emerald-100/70 leading-relaxed text-sm">Esa sensación de que el dinero desaparece apenas llega a tu cuenta sin dejar rastro.</p>
+                </div>
+                <div class="bg-[#1B4332]/40 p-10 rounded-2xl border border-[#2D6A4F] hover:bg-[#1B4332]/60 transition-all">
+                    <div class="text-3xl mb-4">🌑</div>
+                    <h3 class="text-xl font-bold mb-3 text-[#B79455]">Incertidumbre total</h3>
+                    <p class="text-emerald-100/70 leading-relaxed text-sm">No saber exactamente cuánto gastas ni cuánto podrías ahorrar si te organizaras.</p>
+                </div>
+                <div class="bg-[#1B4332]/40 p-10 rounded-2xl border border-[#2D6A4F] hover:bg-[#1B4332]/60 transition-all">
+                    <div class="text-3xl mb-4">⚠️</div>
+                    <h3 class="text-xl font-bold mb-3 text-[#B79455]">Miedo al mañana</h3>
+                    <p class="text-emerald-100/70 leading-relaxed text-sm">Cualquier imprevisto se convierte en un drama económico porque no tienes una base sólida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. EL MÉTODO (Contenido) -->
+    <section class="py-24 px-5 bg-white">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 text-[#1B4332] leading-tight">RAÍZ: Tu manual de supervivencia financiera</h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">He volcado toda la estrategia de mi PDF en un sistema accionable. Sin rodeos, directo a la práctica.</p>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#D8F3DC] text-[#1B4332] p-2 rounded-lg font-bold">01</div>
+                        <div>
+                            <p class="font-black text-[#1B4332]">Diagnóstico Real</p>
+                            <p class="text-sm text-slate-500">Mapeamos tus ingresos y gastos actuales.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#D8F3DC] text-[#1B4332] p-2 rounded-lg font-bold">02</div>
+                        <div>
+                            <p class="font-black text-[#1B4332]">Sistema de Ahorro</p>
+                            <p class="text-sm text-slate-500">Creamos el hábito de retener valor sin sufrir.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#D8F3DC] text-[#1B4332] p-2 rounded-lg font-bold">03</div>
+                        <div>
+                            <p class="font-black text-[#1B4332]">Fondo de Emergencia</p>
+                            <p class="text-sm text-slate-500">Tu primer escudo contra la ansiedad financiera.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 bg-[#F4F1EA] p-12 rounded-3xl border border-slate-200 shadow-inner text-center">
+                <div class="w-16 h-1 bg-[#1B4332] mx-auto mb-6"></div>
+                <h3 class="text-2xl font-black text-[#1B4332] mb-4">Contenido del PDF</h3>
+                <p class="text-slate-500 mb-8 italic text-sm">Recibirás acceso al manual completo + plantillas de trabajo para empezar hoy mismo.</p>
+                <a href="https://paulafacu.gumroad.com/l/movqz" target="_blank" class="block bg-[#1B4332] text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-emerald-900/40 transition-all uppercase tracking-widest text-sm">DESCARGAR AHORA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TRANSFORMACIÓN -->
+    <section class="py-24 px-5 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-16 text-[#1B4332]">El cambio es radical</h2>
+            <div class="overflow-hidden rounded-2xl shadow-xl border border-slate-200 bg-white">
+                <div class="grid grid-cols-2 text-center font-bold text-white uppercase text-[10px] tracking-widest">
+                    <div class="bg-slate-500 py-3 italic">Situación Actual</div>
+                    <div class="bg-[#2D6A4F] py-3">Con Método RAÍZ</div>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    <div class="grid grid-cols-2 divide-x divide-slate-100">
+                        <div class="p-8 text-sm text-slate-400 italic">Estrés cada vez que llega un recibo.</div>
+                        <div class="p-8 text-sm md:text-base font-bold text-[#1B4332]">Tranquilidad de tener un presupuesto bajo control.</div>
+                    </div>
+                    <div class="grid grid-cols-2 divide-x divide-slate-100">
+                        <div class="p-8 text-sm text-slate-400 italic">No saber a dónde va el dinero.</div>
+                        <div class="p-8 text-sm md:text-base font-bold text-[#1B4332]">Claridad total sobre tus números reales.</div>
+                    </div>
+                    <div class="grid grid-cols-2 divide-x divide-slate-100">
+                        <div class="p-8 text-sm text-slate-400 italic">Vivir "al día" sin capacidad de ahorro.</div>
+                        <div class="p-8 text-sm md:text-base font-bold text-[#1B4332]">Crecimiento sostenido de tu primer fondo de ahorro.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ¿PARA QUIÉN ES? -->
+    <section class="py-24 px-5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-12 text-[#1B4332]">Este PDF es para ti si...</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-left">
+                <div class="flex gap-4 p-6 bg-[#F4F1EA] rounded-xl border border-slate-200">
+                    <span class="text-[#1B4332] font-black">✓</span>
+                    <p class="text-slate-700 text-sm">Quieres empezar a ahorrar pero sientes que no ganas lo suficiente.</p>
+                </div>
+                <div class="flex gap-4 p-6 bg-[#F4F1EA] rounded-xl border border-slate-200">
+                    <span class="text-[#1B4332] font-black">✓</span>
+                    <p class="text-slate-700 text-sm">Estás cansado de vivir endeudado o "justo" cada mes.</p>
+                </div>
+                <div class="flex gap-4 p-6 bg-[#F4F1EA] rounded-xl border border-slate-200">
+                    <span class="text-[#1B4332] font-black">✓</span>
+                    <p class="text-slate-700 text-sm">Buscas una metodología simple, sin términos financieros complicados.</p>
+                </div>
+                <div class="flex gap-4 p-6 bg-[#F4F1EA] rounded-xl border border-slate-200">
+                    <span class="text-[#1B4332] font-black">✓</span>
+                    <p class="text-slate-700 text-sm">Necesitas un plan de acción real para los próximos 30 días.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="py-24 px-5 bg-[#F8F9FA] border-t border-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-black text-center mb-12 text-[#1B4332]">Preguntas Frecuentes</h2>
+            <div class="space-y-4">
+                <div class="faq-item active bg-white border border-slate-200 rounded-xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-[#1B4332]">
+                        ¿Qué recibiré exactamente por $7?
+                        <svg class="faq-icon w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer mt-4 text-slate-500 text-sm leading-relaxed">
+                        Recibirás el acceso directo al PDF de "RAÍZ: Finanzas desde Cero", que incluye la metodología completa, plantillas descargables y la hoja de ruta para sanar tus cuentas.
+                    </div>
+                </div>
+                <div class="faq-item bg-white border border-slate-200 rounded-xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-[#1B4332]">
+                        ¿Es seguro el pago?
+                        <svg class="faq-icon w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer mt-4 text-slate-500 text-sm leading-relaxed">
+                        Totalmente. Utilizamos Gumroad, una de las plataformas de productos digitales más seguras y confiables del mundo.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. OFERTA FINAL -->
+    <section id="oferta" class="py-24 bg-[#1B4332] px-5 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black text-[#F4F1EA] mb-6 tracking-tight">Comienza a construir hoy.</h2>
+            <p class="text-emerald-100 mb-12 text-lg font-light max-w-xl mx-auto italic">"La mejor inversión que puedes hacer es en tu propia tranquilidad."</p>
+            
+            <div class="bg-[#F4F1EA] rounded-[2rem] p-12 md:p-16 shadow-2xl max-w-lg mx-auto transform transition-transform border-4 border-[#B79455]/20">
+                <span class="inline-block bg-[#1B4332] text-white text-[10px] font-black px-4 py-1.5 rounded-full mb-8 uppercase tracking-widest">Oferta de Lanzamiento</span>
+                
+                <p class="text-slate-400 font-bold line-through text-xl mb-1">$47 USD</p>
+                <div class="flex justify-center items-start gap-1 mb-10">
+                    <span class="text-2xl font-black text-[#1B4332] mt-2">$</span>
+                    <span class="text-8xl font-black text-[#1B4332] tracking-tighter">7</span>
+                    <span class="text-lg font-bold text-slate-400 mt-14 ml-2">USD</span>
+                </div>
+                
+                <a href="https://paulafacu.gumroad.com/l/movqz" target="_blank" class="block w-full bg-[#1B4332] hover:bg-[#081C15] text-[#F4F1EA] text-xl font-black py-6 rounded-2xl transition-all shadow-xl shadow-emerald-900/30">
+                    SÍ, QUIERO EL MÉTODO RAÍZ
+                </a>
+                
+                <div class="mt-12 flex flex-col items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl">🛡️</span>
+                        <p class="text-[10px] text-slate-400 text-left font-bold uppercase tracking-wider">Garantía de Satisfacción 7 Días</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-[#081C15] text-emerald-100/30 text-center text-[10px] px-5 leading-loose border-t border-[#1B4332]">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <p>&copy; 2026 RAÍZ · Finanzas Personales. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        function updateTimer() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59);
+            let diff = end - now;
+            if (diff < 0) diff = 0;
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('timer').innerText = 
+                `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+
+</body>
